@@ -1,43 +1,40 @@
 import 'package:flutter/material.dart';
 
+// Contoh StatefulWidget sederhana
 class CounterApp extends StatefulWidget {
   const CounterApp({super.key});
-
   @override
-  State<CounterApp> createState() => _CounterAppState();
+  State<CounterApp> createState() => _CounterAppState(); // Membuat objek State
 }
-
 class _CounterAppState extends State<CounterApp> {
-  int _counter = 0;
-
+  int _counter = 0; // State yang dapat berubah
   void _incrementCounter() {
-    setState(() {
+    setState(() { // Metode setState() memberitahu Flutter untuk membangun ulang widget
       _counter++;
     });
   }
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: const Text('Stateful Counter Example'),
+          title: const Text('Stateful Widget Example'),
         ),
         body: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               const Text(
-                'anda telah menekan tombol ini:',
-                style: TextStyle(fontSize: 20),
+                'Anda telah menekan tombol sebanyak:',
+                style: TextStyle(fontSize: 18),
               ),
               Text(
-                '$_counter',
-                style: const TextStyle(fontSize: 40, fontWeight: FontWeight.bold),
+                '$_counter', // Menampilkan state _counter
+                style: const TextStyle(fontSize: 48, fontWeight: FontWeight.bold),
               ),
-              const SizedBox(height: 20),
+              const SizedBox(height: 20), // Memberi jarak
               ElevatedButton(
-                onPressed: _incrementCounter,
+                onPressed: _incrementCounter, // Memanggil fungsi untuk mengubah state
                 child: const Text('Tambah'),
               ),
             ],
@@ -47,7 +44,6 @@ class _CounterAppState extends State<CounterApp> {
     );
   }
 }
-
 void main() {
   runApp(const CounterApp());
 }
