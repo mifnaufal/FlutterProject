@@ -5,6 +5,7 @@ import 'bab4/InputdariPengguna.dart' as userInputExample;
 import 'bab4/MengelolaStateLokal.dart' as stateExample;
 import 'bab3/latihan/bab3.dart' as bab3Example;
 import 'bab4/latihan/bab4.dart' as bab4Example;
+import 'bab5/latihan/bab5.dart' as bab5Example;
 
 void main() {
   runApp(const MainApp());
