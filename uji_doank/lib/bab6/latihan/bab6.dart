@@ -1,14 +1,25 @@
 import 'package:flutter/material.dart';
 
-// ✅ Data dummy foto untuk GridView
-const List<Map<String, String>> photos = [
-  {'title': 'Gunung', 'url': 'https://picsum.photos/id/1018/400/400'},
-  {'title': 'Pantai', 'url': 'https://picsum.photos/id/1015/400/400'},
-  {'title': 'Hutan',  'url': 'https://picsum.photos/id/1020/400/400'},
-  {'title': 'Kota',   'url': 'https://picsum.photos/id/1011/400/400'},
-  {'title': 'Danau',  'url': 'https://picsum.photos/id/1003/400/400'},
-  {'title': 'Jalan',  'url': 'https://picsum.photos/id/1035/400/400'},
-];
+// (Data dummy yang sudah disiapkan di langkah 2)
+
+void main() {
+  runApp(const MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'My Gallery App',
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+      ),
+      home: const GalleryApp(),
+    );
+  }
+}
 
 class GalleryApp extends StatelessWidget {
   const GalleryApp({super.key});
