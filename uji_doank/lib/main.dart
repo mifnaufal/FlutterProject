@@ -6,6 +6,7 @@ import 'bab4/MengelolaStateLokal.dart' as stateExample;
 import 'bab3/latihan/bab3.dart' as bab3Example;
 import 'bab4/latihan/bab4.dart' as bab4Example;
 import 'bab5/latihan/bab5.dart' as bab5Example;
+import 'bab6/latihan/bab6.dart' as bab6Example;
 
 void main() {
   runApp(const MainApp());
@@ -33,91 +34,123 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Flutter Examples'),
-      ),
+      appBar: AppBar(title: const Text('Flutter Examples')),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            const Text(
-              'Pilih Contoh:',
-              style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
-            ),
-            const SizedBox(height: 30),
-            ElevatedButton(
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => const onChangedExample.OnChangedDemo(),
-                  ),
-                );
-              },
-              child: const Text('OnChanged Example'),
-            ),
-            const SizedBox(height: 10),
-            ElevatedButton(
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => const gestureExample.GestureDetectorExample(),
-                  ),
-                );
-              },
-              child: const Text('Gesture Detector Example'),
-            ),
-            const SizedBox(height: 10),
-            ElevatedButton(
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => const userInputExample.UserInputExample(),
-                  ),
-                );
-              },
-              child: const Text('User Input Example'),
-            ),
-            const SizedBox(height: 10),
-            ElevatedButton(
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => const stateExample.CounterApp(),
-                  ),
-                );
-              },
-              child: const Text('State Management Example'),
-            ),
-            const SizedBox(height: 10),
-            ElevatedButton(
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => const bab3Example.MyProfileCard(),
-                  ),
-                );
-              },
-              child: const Text('Bab 3 Profile Card'),
-            ),
-            const SizedBox(height: 10),
-            ElevatedButton(
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => const bab4Example.SimpleCalculatorApp(),
-                  ),
-                );
-              },
-              child: const Text('Bab 4 Calculator'),
-            ),
-          ],
+        child: SingleChildScrollView(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              const Text(
+                'Pilih Contoh:',
+                style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+              ),
+              const SizedBox(height: 30),
+
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const onChangedExample.OnChangedDemo(),
+                    ),
+                  );
+                },
+                child: const Text('OnChanged Example'),
+              ),
+              const SizedBox(height: 10),
+
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const gestureExample.GestureDetectorExample(),
+                    ),
+                  );
+                },
+                child: const Text('Gesture Detector Example'),
+              ),
+              const SizedBox(height: 10),
+
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const userInputExample.UserInputExample(),
+                    ),
+                  );
+                },
+                child: const Text('User Input Example'),
+              ),
+              const SizedBox(height: 10),
+
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const stateExample.CounterApp(),
+                    ),
+                  );
+                },
+                child: const Text('State Management Example'),
+              ),
+              const SizedBox(height: 10),
+
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const bab3Example.MyProfileCard(),
+                    ),
+                  );
+                },
+                child: const Text('Bab 3 Profile Card'),
+              ),
+              const SizedBox(height: 10),
+
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const bab4Example.SimpleCalculatorApp(),
+                    ),
+                  );
+                },
+                child: const Text('Bab 4 Calculator'),
+              ),
+              const SizedBox(height: 10),
+
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const bab5Example.ProductListScreen(),
+                    ),
+                  );
+                },
+                child: const Text('Bab 5 Product List'),
+              ),
+              const SizedBox(height: 10),
+
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const bab6Example.GalleryApp(),
+                    ),
+                  );
+                },
+                child: const Text('Bab 6 Gallery App'),
+              ),
+            ],
+          ),
         ),
       ),
     );

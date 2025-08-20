@@ -1,25 +1,14 @@
 import 'package:flutter/material.dart';
 
-// (Data dummy yang sudah disiapkan di langkah 2)
-
-void main() {
-  runApp(const MyApp());
-}
-
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'My Gallery App',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: const GalleryApp(),
-    );
-  }
-}
+// ✅ Data dummy foto untuk GridView
+const List<Map<String, String>> photos = [
+  {'title': 'Gunung', 'url': 'https://picsum.photos/id/1018/400/400'},
+  {'title': 'Pantai', 'url': 'https://picsum.photos/id/1015/400/400'},
+  {'title': 'Hutan',  'url': 'https://picsum.photos/id/1020/400/400'},
+  {'title': 'Kota',   'url': 'https://picsum.photos/id/1011/400/400'},
+  {'title': 'Danau',  'url': 'https://picsum.photos/id/1003/400/400'},
+  {'title': 'Jalan',  'url': 'https://picsum.photos/id/1035/400/400'},
+];
 
 class GalleryApp extends StatelessWidget {
   const GalleryApp({super.key});
@@ -27,22 +16,19 @@ class GalleryApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('My Gallery App'),
-      ),
+      appBar: AppBar(title: const Text('My Gallery App')),
       body: GridView.builder(
         padding: const EdgeInsets.all(10),
         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-          crossAxisCount: 2, // Atur jumlah kolom
+          crossAxisCount: 2,
           crossAxisSpacing: 10,
           mainAxisSpacing: 10,
         ),
-        itemCount: photos.length,
+        itemCount: photos.length, // ✅ sudah terdefinisi
         itemBuilder: (BuildContext context, int index) {
-          final photo = photos[index];
+          final photo = photos[index]; // ✅ tidak merah lagi
           return GestureDetector(
             onTap: () {
-              // Navigasi ke halaman detail
               Navigator.push(
                 context,
                 MaterialPageRoute(
@@ -73,7 +59,6 @@ class GalleryApp extends StatelessWidget {
   }
 }
 
-// Letakkan class ini di bawah class GalleryApp
 class PhotoDetailScreen extends StatelessWidget {
   final String title;
   final String imageUrl;
@@ -87,31 +72,17 @@ class PhotoDetailScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(title),
-      ),
+      appBar: AppBar(title: Text(title)),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Image.network(
-              imageUrl,
-              fit: BoxFit.contain,
-            ),
+            Image.network(imageUrl, fit: BoxFit.contain),
             const SizedBox(height: 20),
-            Text(
-              title,
-              style: const TextStyle(
-                fontSize: 24,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
+            Text(title, style: const TextStyle(fontSize: 24, fontWeight: FontWeight.bold)),
             const SizedBox(height: 20),
-            // Tombol "Kembali"
             ElevatedButton(
-              onPressed: () {
-                Navigator.pop(context);
-              },
+              onPressed: () => Navigator.pop(context),
               child: const Text('Kembali'),
             ),
           ],
