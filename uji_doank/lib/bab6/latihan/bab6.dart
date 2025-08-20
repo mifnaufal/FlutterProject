@@ -1,6 +1,33 @@
 import 'package:flutter/material.dart';
 
 // (Data dummy yang sudah disiapkan di langkah 2)
+// Tambahkan data dummy agar `photos` terdefinisi dan GridView memiliki sumber data.
+const List<Map<String, String>> photos = [
+  {
+    'title': 'Pemandangan 1',
+    'url': 'https://picsum.photos/id/1015/600/400',
+  },
+  {
+    'title': 'Pemandangan 2',
+    'url': 'https://picsum.photos/id/1025/600/400',
+  },
+  {
+    'title': 'Pemandangan 3',
+    'url': 'https://picsum.photos/id/1035/600/400',
+  },
+  {
+    'title': 'Pemandangan 4',
+    'url': 'https://picsum.photos/id/1045/600/400',
+  },
+  {
+    'title': 'Pemandangan 5',
+    'url': 'https://picsum.photos/id/1055/600/400',
+  },
+  {
+    'title': 'Pemandangan 6',
+    'url': 'https://picsum.photos/id/1065/600/400',
+  },
+];
 
 void main() {
   runApp(const MyApp());
